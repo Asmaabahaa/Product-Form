@@ -1,0 +1,113 @@
+<div class="col-md-4">
+  <form action="">
+    <label class="product_label" for="name">Product Name</label>
+    <input class="product_input input-border" classtype="text" required [(ngModel)]="product.name" name="name"
+      placeholder="Name" />
+    <div>Product Type</div>
+    <div class="row">
+      <div class="col">
+        <input type="radio" required value="{{ 1 }}" [(ngModel)]="product.type" name="type" />
+        <label for="type1">Type 1</label>
+
+      </div>
+      <div class="col">
+        <input type="radio" required value="{{ 2 }}" [(ngModel)]="product.type" name="type" />
+        <label for="type2">Type 2</label>
+      </div>
+    </div>
+
+    <label class="product_label" for="category">Product Category</label>
+    <input class="product_input input-border" type="text" required [(ngModel)]="product.category" name="category"
+      placeholder="Category" />
+    <input type="checkbox" required [(ngModel)]="product.subCategory" name="subCategory" />
+    <label for="subCategory">This is a sub-category</label>
+
+    <div class="row">
+      <div class="col-md-6 colxs-12">
+        <label for="referenceId">Reference ID <span class="optional-item">(Optional)</span></label>
+        <input class="delivery-input input-border" type="number" required [(ngModel)]="product.id" name="referenceId"
+          placeholder="ID" />
+
+      </div>
+      <div class="col-md-6 colxs-12">
+        <label for="password">Password</label>
+        <div class="wrapper">
+          <input class="delivery-input input-border" type="password" required [(ngModel)]="product.password"
+            name="password" placeholder="Password" />
+          <i class="fa fa-eye"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 colxs-12">
+        <label for="deliverFeesCost">Delivery Fees</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">EGP</div>
+          </div>
+          <input class="delivery-input input-border" type="number" required [(ngModel)]="product.deliveryFeesCost"
+            name="deliveryFeesCost" placeholder="Delivery Fees" />
+        </div>
+      </div>
+      <div class="col">
+        <label for="deliveryFeesPercent">Delivery Fees</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">%</div>
+          </div>
+          <input class="delivery-input input-border" type="number" required [(ngModel)]="product.deliveryFeesPercent"
+            name="deliveryFeesPercent" placeholder="Delivery Fees" />
+        </div>
+      </div>
+    </div>
+
+    <div class="row btn-row">
+      <div class="col">
+        <button data-toggle="modal" data-target="#exampleModalCenter" *ngIf="!isNewProduct"
+          class="delete-btn btn btn-primary" (click)="deleteRequest(content)">Delete</button>
+
+      </div>
+      <div class="col align-right">
+        <button class="cancel-btn btn btn-primary">
+          <a href="#" class="close " data-dismiss="modal" aria-label="close">Cancel</a>
+        </button>
+
+        <button (click)="save(saveUpdates)"  class="save-btn btn btn-primary">
+         Save
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Save Updates Modal -->
+    <ng-template #saveUpdates let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title">Save changes?</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to save changes made?</p>
+      </div>
+      <div class="modal-footer">
+        <button (click)="modal.dismiss('Cross click')" class="cancel-btn">Discard</button>
+        <button (click)="SaveUpdates()" class="save-btn btn btn-primary">Save</button>
+      </div>
+    </ng-template>
+
+    <!-- Delete Modal -->
+    <ng-template #content let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title">Delete "{{product.name}}"?</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete product? Once delected, you won't be able to access again.</p>
+      </div>
+      <div class="modal-footer">
+        <button (click)="modal.dismiss('Cross click')" class="cancel-btn">Discard</button>
+        <button (click)="modalDeleteBtn()" type="submit" class="delete-modal-btn btn btn-primary">Delete</button>
+      </div>
+    </ng-template>
+  </form>
+</div>

@@ -1,0 +1,91 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap'
+// @import '~ngx-toastr/toastr-bs4-alert'
+@import "~@ng-select/ng-select/themes/material.theme.css"
+@import "~@ng-select/ng-select/themes/default.theme.css"
+@import '~ngx-toastr/toastr'
+@import "~angular-notifier/styles.css"
+
+
+
+body 
+    font-size: 1rem
+    font-weight: 400
+    line-height: 2
+    position: relative
+    font-family:"Roboto", "Lucida Console", "Courier New", monospace    
+    background-color: #f6f7fb
+
+
+// .card 
+//     position: relative 
+//     display: -webkit-box 
+//     display: block
+//     flex-direction: column 
+//     min-width: 0 
+//     word-wrap: break-word 
+//     background-color: #f6f7fb 
+//     background-clip: border-box
+//     position: relative
+
+product-selector
+     margin-top: 5% !important
+
+.wrapper 
+    position: relative
+
+i.fa-search , i.fa-eye  
+    position: absolute
+    right: 10px
+    color: #d2d2d2
+i.fa-search
+    top: 15px
+i.fa-eye
+    top: 10px
+.ng-placeholder
+    transform: none !important
+.ng-select 
+.ng-select-container 
+.ng-value-container
+    border-top: 0 !important
+.ng-option-disabled
+    display: none !important
+.ng-select 
+.ng-select-container:after
+    border-bottom: none !important
+.ng-select.ng-select-single 
+.ng-select-container 
+.ng-arrow-wrapper
+        bottom: 0px !important
+.notifier__notification--success
+    background-color: #fff
+    color: #141619
+    .notifier__notification-button-icon 
+        fill:#000
+    
+.notifier__notification--material
+    padding-top: 5px
+    padding-right: 0
+    padding-bottom: 0
+    margin-top: 5% !important
+
+    .notifier__notification-button
+        margin-right: 0
+        margin-left: 0
+        height: auto
+
+// Start Media Query
+@media screen and (max-width: 992px) 
+.col 
+    width: 50%
+  
+@media screen and (max-width: 600px) 
+.col 
+    width: 100%
+.align-right
+    display: flex
+
+
+  
